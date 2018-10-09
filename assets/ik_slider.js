@@ -63,7 +63,7 @@
 			
 			plugin.knob = $('<div/>')
 				.attr({
-					'id': 
+					'id': id,
 					'tabindex': 0, // add this element to tab order
 				    	'role': 'slider', // assign role slider
 				    	'aria-valuemin': plugin.options.minValue, // set slider minimum value
