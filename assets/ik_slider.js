@@ -48,7 +48,7 @@
 		
 			plugin.textfield
 				.attr({
-					'readonly': '',
+					'readonly': '', 
 					'tabindex': -1
 				})
 				.addClass('ik_value')
