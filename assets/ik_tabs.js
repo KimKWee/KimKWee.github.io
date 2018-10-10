@@ -21,7 +21,7 @@
 		this.options = $.extend( {}, defaults, options) ;
 		
 		this.init();
-	}
+	};
 	
 	/** Initializes plugin. */
 	Plugin.prototype.init = function () {
@@ -127,7 +127,7 @@
     			})
 			.show(); 
 		
-	}
+	};
 	
 	/**
 	* Handles keydown event on header button.
@@ -163,7 +163,7 @@
 		    event.stopPropagation();
 		    return false;
 	    }
-	}
+	};
 	
 	$.fn[pluginName] = function ( options ) {
 		
@@ -176,6 +176,6 @@
 			
 		});
 		
-	}
+	};
  
 })( jQuery, window, document );
