@@ -66,6 +66,7 @@
 				})
 				.text(lbl > '' ? lbl : 'Tab ' + (i + 1))
 				.on('click', {'plugin': plugin, 'index': i}, plugin.selectTab) // add mouse event handler
+				.on('keydown', {'plugin': plugin, 'index': i}, plugin.onKeyDown) // add mouse event handler
 				.appendTo($tabbar);
 			});
 		
