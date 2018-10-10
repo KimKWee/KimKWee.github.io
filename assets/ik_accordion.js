@@ -33,7 +33,8 @@
 		plugin = this;
 		
 		$elem.attr({
-			'id': id
+			'id': id,
+			'role': 'region' // add the accordion to the landmarked regions
 		}).addClass('ik_accordion');
 			
 		this.headers = $elem.children('dt').each(function(i, el) {
@@ -41,11 +42,15 @@
 			
 			$me = $(el);
 			$btn = $('<div/>').attr({
-          'id': id + '_btn_' + i
-        })
-        .addClass('button')
-        .html($me.html())
-        .on('click', {'plugin': plugin}, plugin.togglePanel);
+				'id': id + '_btn_' + i,
+				'role': 'button',
+				'aria-controls': id + '_panel_' + i, // associate button with corresponding panel
+				'aria-expanded': false, // toggle expanded state
+				'tabindex': 0 //add keyboard focus
+			})
+			.addClass('button')
+			.html($me.html())
+			.on('click', {'plugin': plugin}, plugin.togglePanel);
         
 			$me.empty().append($btn); // wrap content of each header in an element with role button
 		});
