@@ -128,6 +128,7 @@
 		plugin = event.data.plugin;
 		$elem = $(plugin.element);
 		$me = $(event.target);
+		
 		$panel = $me.parent('dt').next();
 		
 		if(plugin.options.autoCollapse) { // expand current panel and collapse the rest
@@ -159,7 +160,7 @@
 		
 			isVisible = !!$panel.is(':visible');
 			$panel.slideToggle({ duration: plugin.options.animationSpeed });
-			
+			$me.attr({'aria-expanded': isVisible })
 		}
 	};
 	
