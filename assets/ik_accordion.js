@@ -139,10 +139,18 @@
 				$btn = $hdr.find('.button');
 				
 				if($btn[0] != $(event.currentTarget)[0]) { 
-					$btn.removeClass('expanded');
+					$btn
+						.attr({
+							'aria-expanded': false, // toggle expanded state			
+						})
+						.removeClass('expanded');
 					$hdr.next().slideUp(plugin.options.animationSpeed);
 				} else { 
-					$btn.addClass('expanded');
+					$btn
+						.attr({
+							'aria-expanded': true, // toggle expanded state			
+						})
+						.addClass('expanded');
 					$hdr.next().slideDown(plugin.options.animationSpeed);
 				}
 			});
