@@ -152,12 +152,12 @@
 		case ik_utils.keys.left:
 		case ik_utils.keys.up:
 		    next = ind > 0 ? --ind : 0;
-		    plugin.selectTab({data:{'plugin': plugin, 'index': next}});
+		    plugin.selectTab({data:{'plugin': plugin, 'index': next, 'type' : 'keydown'}});
 		    break;
 		case ik_utils.keys.right:
 		case ik_utils.keys.down:
 		    next = ind < $tabs.length - 1 ? ++ind : $tabs.length - 1;
-		    plugin.selectTab({data:{'plugin': plugin, 'index': next}});
+		    plugin.selectTab({data:{'plugin': plugin, 'index': next, 'type' : 'keydown'}});
 		    break;
 		case ik_utils.keys.space:
 		    event.preventDefault();
