@@ -42,8 +42,8 @@
 			})
 			.addClass('ik_carousel')
 			.on('keydown', {'plugin': plugin}, plugin.onKeyDown)
-			.on('mouseenter', {'plugin': plugin}, plugin.stopTimer)
-			.on('mouseleave', {'plugin': plugin}, plugin.startTimer)
+			.on('mouseenter focusin', {'plugin': plugin}, plugin.stopTimer)
+			.on('mouseleave focusout', {'plugin': plugin}, plugin.startTimer)
 		
 		$controls = $('<div/>')
 			.attr({
